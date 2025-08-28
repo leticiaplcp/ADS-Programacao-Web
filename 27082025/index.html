@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primeiro Titulo da Página</h1>
+    <p>10.117.33.140</p>
+
+    <!--<form action="print.php" method="post">-->
+        <form>
+        Digite o seu nome <br>
+        <input id="nome_aluno" type="text" name="nome_aluno" required><br>
+    
+        Selecione o Curso desejado <br>
+        <select id="curso" name="curso" required>
+            <option value="ads">Análise e Desenvolvimento de Sistemas</option>
+            <option value="ccp">Ciência da Computação</option>
+            <option value="bmat">Bacharelado em Matemática</option>
+
+        </select>
+        <br>
+        <!--<input type="submit" value="Enviar Dados">-->
+        <button id="enviar">Enviar Dados para o JS</button>
+    </form>
+    <script>
+        function printData(){
+            alert(`
+                Nome do Aluno: ${document.getElementById("nome_aluno").value}
+                Curso do Aluno: ${document.getElementById("curso").value}
+            `);
+        }
+        const btn = document.getElementById("enviar");
+        btn.addEventListener("click",printData);
+    </script>
+</body>
+</html>
